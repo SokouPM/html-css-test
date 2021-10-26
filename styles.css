@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --background-info-color: #e4edff;
+  --text-info-color: #3f6ed8;
+
+  --primary-color: #4f0599;
+  --secondary-color: #a365f6;
+  --tertiary-color: #45d6b5;
+  --input-border-color: #d4dae7;
+  --info-height: 60px;
+  --header-height: 70px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.flex,
+.info,
+header,
+.organization,
+.lifeRing,
+.userInitials {
+  display: flex;
+}
+
+.flex,
+.info,
+header {
+  width: 100%;
+}
+
+aside,
+main {
+  height: 10000px;
+}
+
+/******************************* DIV info *******************************/
+
+.info {
+  background-color: var(--background-info-color);
+  color: var(--text-info-color);
+  height: var(--info-height);
+  width: 100%;
+  font-size: 20px;
+  align-items: center;
+}
+
+.info i:first-child {
+  margin: 0 20px;
+}
+
+.info p {
+  margin: 0 10px;
+}
+
+.info i:last-child {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+/******************************* aside *******************************/
+
+aside {
+  background-color: #f6f5f7;
+  flex-basis: 15%;
+}
+
+/******************************* main *******************************/
+
+main {
+  flex-basis: 85%;
+}
+/************* Header *************/
+header,
+.organization {
+  align-items: center;
+}
+
+header {
+  height: var(--header-height);
+  justify-content: space-between;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+header select,
+header .organization .lifeRing {
+  border-radius: 5px;
+}
+
+header select {
+  padding: 0 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+header select:not(.organization select) {
+  background-color: white;
+  margin-left: 20px;
+}
+
+header select:not(.organization select),
+header .organization .lifeRing {
+  background-color: white;
+  border: solid 1px var(--input-border-color);
+}
+
+header select:not(.organization select) {
+  height: 80%;
+  width: 200px;
+}
+
+header .organization {
+  height: 100%;
+  margin-right: 20px;
+}
+
+header .organization select,
+header .organization .lifeRing,
+header .organization .userInitials {
+  height: 45px;
+}
+
+header .organization select {
+  width: 100px;
+  background-color: var(--tertiary-color);
+  color: white;
+  border: none;
+}
+
+header .organization .userInitials,
+header .organization .lifeRing {
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+}
+
+header .organization * {
+  margin: 0 10px;
+}
+
+header .organization .lifeRing {
+  font-size: 25px;
+  color: var(--input-border-color);
+}
+
+header .organization p {
+  text-align: end;
+}
+
+header .organization .userInitials {
+  border-radius: 100%;
+  margin-right: -5px;
+  background-color: var(--secondary-color);
+  color: white;
+}
