@@ -37,7 +37,7 @@ header {
   width: 100%;
 }
 
-aside,
+nav,
 main {
   height: 10000px;
 }
@@ -66,9 +66,9 @@ main {
   margin-right: 20px;
 }
 
-/******************************* aside *******************************/
+/******************************* nav *******************************/
 
-aside {
+nav {
   background-color: #f6f5f7;
   flex-basis: 15%;
 }
@@ -78,7 +78,9 @@ aside {
 main {
   flex-basis: 85%;
 }
+
 /************* Header *************/
+
 header,
 .organization {
   align-items: center;
