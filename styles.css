@@ -5,13 +5,20 @@
 }
 
 :root {
+  --main-width: 85%;
+  --nav-width: 15%;
+
   --background-info-color: #e4edff;
   --text-info-color: #3f6ed8;
 
   --primary-color: #4f0599;
   --secondary-color: #a365f6;
   --tertiary-color: #45d6b5;
-  --input-border-color: #d4dae7;
+  --gray-primary: #4a4f62;
+  --gray-secondary: #b2b6c3;
+  --gray-tertiary: #d4dae7;
+  --nav-background: #f6f5f7;
+
   --info-height: 60px;
   --header-height: 70px;
 }
@@ -24,22 +31,43 @@ body {
 
 .flex,
 .info,
+nav,
+nav .nav-content,
+nav .nav-content-title,
+nav .nav-content-end,
 header,
-.organization,
-.lifeRing,
-.userInitials {
+header .organization,
+header .life-ring,
+header .user-initials {
   display: flex;
+}
+
+.info,
+header,
+nav .nav-content-title,
+header .organization,
+header .organization .user-initials,
+header .organization .life-ring,
+.back-to-buckets-list {
+  align-items: center;
 }
 
 .flex,
 .info,
+nav .nav-content,
+nav .nav-content-title,
 header {
   width: 100%;
 }
 
 nav,
-main {
-  height: 10000px;
+header {
+  position: sticky;
+  top: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 /******************************* DIV info *******************************/
@@ -48,16 +76,15 @@ main {
   background-color: var(--background-info-color);
   color: var(--text-info-color);
   height: var(--info-height);
-  width: 100%;
   font-size: 20px;
-  align-items: center;
+  top: 0;
 }
 
 .info i:first-child {
   margin: 0 20px;
 }
 
-.info p {
+.info p:not(p.new) {
   margin: 0 10px;
 }
 
@@ -68,34 +95,85 @@ main {
 
 /******************************* nav *******************************/
 
+nav,
+.nav-content,
+.nav-content-end {
+  flex-direction: column;
+}
+
 nav {
-  background-color: #f6f5f7;
-  flex-basis: 15%;
+  background-color: var(--nav-background);
+  width: var(--nav-width);
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px;
+  overflow: auto;
+}
+
+nav .logo {
+  width: 60%;
+  margin-bottom: 40px;
+}
+
+nav p,
+nav .nav-content a {
+  color: var(--gray-primary);
+}
+
+nav p,
+nav .nav-content a {
+  margin-bottom: 15px;
+}
+
+nav .nav-content-title,
+nav .nav-content a {
+  font-size: 16px;
+}
+
+nav .nav-content-title,
+.nav-content-end {
+  color: var(--primary-color);
+}
+
+nav .nav-content-title {
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.nav-content-end {
+  margin-top: 30px;
+}
+
+.nav-content-end a {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nav-content-end a i {
+  color: var(--gray-secondary);
+}
+
+nav a:hover {
+  font-weight: bolder;
 }
 
 /******************************* main *******************************/
 
 main {
-  flex-basis: 85%;
+  width: var(--main-width);
 }
 
 /************* Header *************/
 
-header,
-.organization {
-  align-items: center;
-}
-
 header {
   height: var(--header-height);
   justify-content: space-between;
+  background-color: white;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
 }
 
 header select,
-header .organization .lifeRing {
+header .organization .life-ring {
   border-radius: 5px;
 }
 
@@ -106,14 +184,13 @@ header select {
 }
 
 header select:not(.organization select) {
-  background-color: white;
   margin-left: 20px;
 }
 
 header select:not(.organization select),
-header .organization .lifeRing {
+header .organization .life-ring {
   background-color: white;
-  border: solid 1px var(--input-border-color);
+  border: solid 1px var(--gray-tertiary);
 }
 
 header select:not(.organization select) {
@@ -127,22 +204,25 @@ header .organization {
 }
 
 header .organization select,
-header .organization .lifeRing,
-header .organization .userInitials {
+header .organization .life-ring,
+header .organization .user-initials {
   height: 45px;
+}
+
+header .organization select,
+header .organization .user-initials {
+  color: white;
 }
 
 header .organization select {
   width: 100px;
   background-color: var(--tertiary-color);
-  color: white;
   border: none;
 }
 
-header .organization .userInitials,
-header .organization .lifeRing {
+header .organization .user-initials,
+header .organization .life-ring {
   justify-content: center;
-  align-items: center;
   width: 45px;
 }
 
@@ -150,18 +230,41 @@ header .organization * {
   margin: 0 10px;
 }
 
-header .organization .lifeRing {
+header .organization .life-ring {
   font-size: 25px;
-  color: var(--input-border-color);
+  box-sizing: border-box;
+  color: var(--gray-tertiary);
+  cursor: pointer;
 }
 
-header .organization p {
+header .organization .life-ring:hover {
+  border: none;
+  color: white;
+  background-color: var(--primary-color);
+}
+
+header .organization p:not(.user-initials p) {
   text-align: end;
+  color: var(--gray-primary);
 }
 
-header .organization .userInitials {
+header .organization .user-initials {
   border-radius: 100%;
   margin-right: -5px;
   background-color: var(--secondary-color);
-  color: white;
 }
+
+/**** back to buckets list *****/
+
+.back-to-buckets-list {
+  display: flex;
+  justify-content: space-between;
+  width: 19%;
+  margin: 20px 0 0 20px;
+}
+
+.back-to-buckets-list a:hover {
+  text-decoration: underline;
+}
+
+/************* form *************/

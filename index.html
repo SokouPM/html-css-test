@@ -16,21 +16,20 @@
   <body>
     <div class="info">
       <i class="fas fa-info-circle"></i>
-      <i class="fas fa-bell"></i>
       <p>
-        Use Kubernetes Kosmos to launch pods through multiple cloud providers &
-        streamline the availability of your K8s workload
+        🆕 Use Kubernetes Kosmos to launch pods through multiple cloud providers
+        & streamline the availability of your K8s workload 🚀
       </p>
-      <i class="fas fa-rocket"></i>
       <i class="fas fa-times"></i>
     </div>
     <div class="flex">
       <nav>
-        <img src="./sources/Scaleway_logo.svg" alt="Scaleway_logo" />
+        <img class="logo" src="./sources/logo.svg" alt="Scaleway-logo" />
         <p>Project dashbooard</p>
-        <div class="navContent">
-          <div>
-            <h3>Compute</h3>
+        <div class="nav-content">
+          <div class="nav-content-title">
+            <h3><i class="fas fa-memory"></i> Compute</h3>
+            <i class="fas fa-chevron-up"></i>
           </div>
           <a href="#">Instances</a>
           <a href="#">Apple silicon</a>
@@ -39,45 +38,54 @@
           <a href="#">Functions</a>
           <a href="#">Containers</a>
         </div>
-        <div class="navContent">
-          <div>
-            <h3>Storage</h3>
+        <div class="nav-content">
+          <div class="nav-content-title">
+            <h3><i class="fas fa-hdd"></i> Storage</h3>
+            <i class="fas fa-chevron-up"></i>
           </div>
           <a href="#">Object Storage</a>
           <a href="#">Apple silicon</a>
         </div>
-        <div class="navContent">
-          <div>
-            <h3>VPC</h3>
+        <div class="nav-content">
+          <div class="nav-content-title">
+            <h3><i class="fas fa-cloud"></i> VPC</h3>
+            <i class="fas fa-chevron-up"></i>
           </div>
           <a href="#">Private Network</a>
           <a href="#">Public Gateway</a>
         </div>
-        <div class="navContent">
-          <div>
-            <h3>Network</h3>
+        <div class="nav-content">
+          <div class="nav-content-title">
+            <h3><i class="fas fa-globe"></i> Network</h3>
+            <i class="fas fa-chevron-up"></i>
           </div>
           <a href="#">Load Balancer</a>
           <a href="#">DNS</a>
         </div>
-        <div class="navContent">
-          <div>
-            <h3>Tools</h3>
+        <div class="nav-content">
+          <div class="nav-content-title">
+            <h3><i class="fas fa-tools"></i> Tools</h3>
+            <i class="fas fa-chevron-up"></i>
           </div>
           <a href="#">Container Registry</a>
         </div>
-        <div class="navContent">
-          <div>
-            <h3>IoT Station</h3>
+        <div class="nav-content">
+          <div class="nav-content-title">
+            <h3><i class="fas fa-sun"></i> IoT Station</h3>
+            <i class="fas fa-chevron-up"></i>
           </div>
           <a href="#">IoT Hub</a>
         </div>
-        <div class="navContentOther">
+        <div class="nav-content-end">
           <a href="#">Support</a>
           <a href="#">Abuse</a>
-          <a href="#">Documentation</a>
-          <a href="#">Feature Request</a>
-          <a href="#">Dedibox Console</a>
+          <a href="#">Documentation <i class="fas fa-external-link-alt"></i></a>
+          <a href="#"
+            >Feature Request <i class="fas fa-external-link-alt"></i
+          ></a>
+          <a href="#"
+            >Dedibox Console <i class="fas fa-external-link-alt"></i
+          ></a>
         </div>
       </nav>
       <main>
@@ -91,16 +99,74 @@
               <option value="create">Create</option>
               <option value="modify">Modify</option>
             </select>
-            <div class="lifeRing">
+            <div class="life-ring">
               <i class="far fa-life-ring"></i>
             </div>
             <p>Organization:<br />nine1000</p>
-            <div class="userInitials">
+            <div class="user-initials">
               <p>NI</p>
             </div>
             <i class="fas fa-chevron-down"></i>
           </div>
         </header>
+        <div class="back-to-buckets-list">
+          <i class="fas fa-chevron-left"></i>
+          <a href="#">Revenir à la liste des buckets</a>
+        </div>
+          <form action="#" method="post">
+            <h1>Create a Bucket</h1>
+            <div class="NameYourBucketDiv titleDiv">
+              <h2 class="titleH2 h2Number1">Name your bucket</h2>
+              <input
+                type="text"
+                class="inputBucket"
+                placeholder="Bucket name"
+              />
+            </div>
+            <div class="ChooseARegion titleDiv">
+              <h2 class="titleH2 h2Number2">Choose a region</h2>
+              <p style="margin-bottom: 25px">
+                A region refers to the geographical location in wich yout bucket
+                will be created
+              </p>
+              <div class="countries">
+                <div class="divCountry purpleBorder">
+                  <img class="svgCountry" src="./sources/france.svg" />
+                  <p>PARIS</p>
+                </div>
+                <div class="divCountry">
+                  <img class="svgCountry" src="./sources/amsterdam.svg" />
+                  <p>AMSTERDAM</p>
+                </div>
+                <div class="divCountry">
+                  <img class="svgCountry" src="./sources/varsovie.svg" />
+                  <p>VARSOVIE</p>
+                </div>
+              </div>
+            </div>
+            <div class="SetYourBucketVisibility titleDiv">
+              <h2 class="titleH2 h2Number3">Set Your Bucket Visibility</h2>
+              <div class="bucketVisibility titleDiv">
+                <p style="padding-bottom: 50px">
+                  Bucket Visiblity specifies whether the list of objects in the
+                  <input type="radio" /> Public
+                  <input type="radio" class="teest" checked /> Private
+                </p>
+              </div>
+            </div>
+            <div class="EstimatedCost titleDiv">
+              <h2 class="titleH2 h2Number4">Estimated Cost</h2>
+              <p>
+                This summary provides a cost estimation based on your
+                configuration, the amount of time you expexct to use the
+                resource for, and the scale of your expected usage. For the
+                purpose of this calculation, we consider that 1 month equals to
+                730 hours
+              </p>
+              <input type="text" />
+            </div>
+          </form>
+        </div>
       </main>
     </div>
   </body>
