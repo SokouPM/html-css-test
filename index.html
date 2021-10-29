@@ -24,7 +24,7 @@
     </div>
     <div class="flex">
       <nav>
-        <img class="logo" src="./sources/logo.svg" alt="Scaleway-logo" />
+        <img class="logb" src="./sources/logo.svg" alt="Scaleway-logb" />
         <a>Project dashbooard</a>
         <div class="nav-content">
           <div class="nav-content-title">
@@ -35,8 +35,14 @@
           <a href="#">Apple silicon</a>
           <a href="#">Bare Metal</a>
           <a href="#">Kubernetes</a>
-          <a href="#">Functions</a>
-          <a href="#">Containers</a>
+          <div class="beta-link">
+            <a href="#">Functions</a>
+            <div class="beta">BETA</div>
+          </div>
+          <div class="beta-link">
+            <a href="#">Containers</a>
+            <div class="beta">BETA</div>
+          </div>
         </div>
         <div class="nav-content">
           <div class="nav-content-title">
@@ -113,90 +119,220 @@
           <i class="fas fa-chevron-left"></i>
           <a href="#">Back to buckets</a>
         </div>
-          <form action="#" method="post">
-            <h1>Create a Bucket</h1>
-            <div class="form-section">
-              <div class="section-title">
-                <div class="rounded-title-number">
-                  <p>1</p>
-                </div>
-                <h2>Name your bucket</h2>
+        <form action="#" method="post">
+          <h1>Create a Bucket</h1>
+          <div class="form-section">
+            <div class="section-title">
+              <div class="rounded-title-number">
+                <p>1</p>
               </div>
-              <input type="text" class="input-bucket" placeholder="Bucket name" />
-              <p class="first-section-text">
-                <i class="fas fa-info-circle"></i> The name of your bucket can only contain the following characters
-                (min 3): lowercase letters, numbers, periods (.) And hyphens (-)
+              <h2>Name your bucket</h2>
+            </div>
+            <input type="text" class="input-bucket" placeholder="Bucket name" />
+            <p class="first-section-text">
+              <i class="fas fa-info-circle"></i> The name of your bucket can
+              only contain the following characters (min 3): lowercase letters,
+              numbers, periods (.) And hyphens (-)
+            </p>
+          </div>
+          <div class="form-section">
+            <div class="section-title">
+              <div class="rounded-title-number">
+                <p>2</p>
+              </div>
+              <h2>Choose a region</h2>
+            </div>
+            <p>
+              A region refers to the geographical location in wich yout bucket
+              will be created
+            </p>
+            <div class="countries">
+              <div class="country">
+                <input
+                  type="radio"
+                  id="paris"
+                  name="radio-countries"
+                  value="PARIS"
+                  checked
+                />
+                <label for="paris"
+                  ><img class="country-img" src="./sources/france.svg" />
+                  PARIS</label
+                >
+              </div>
+              <div class="country">
+                <input
+                  type="radio"
+                  id="amsterdam"
+                  name="radio-countries"
+                  value="AMSTERDAM"
+                />
+                <label for="amsterdam"
+                  ><img class="country-img" src="./sources/amsterdam.svg" />
+                  AMSTERDAM</label
+                >
+              </div>
+              <div class="country">
+                <input
+                  type="radio"
+                  id="varsovie"
+                  name="radio-countries"
+                  value="VARSOVIE"
+                />
+                <label for="varsovie"
+                  ><img class="country-img" src="./sources/varsovie.svg" />
+                  VARSOVIE</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <div class="section-title">
+              <div class="rounded-title-number">
+                <p>3</p>
+              </div>
+              <h2>Set Your Bucket Visibility</h2>
+            </div>
+            <div class="bucket-visibility-content">
+              <p class="buckey-visibility-text">
+                Bucket Visiblity specifies whether the list of objects in the
+                objects in the bucket. It does not affect the visibility of the
+                objects themselves. A file uploaded to a public bucket is
+                private by default. Additionally, a private file in a public
+                bucket cannot be publicly accessible.
+              </p>
+              <div class="bucket-visibility-radio">
+                <div>
+                  <input
+                    type="radio"
+                    id="public"
+                    name="radio-visibility"
+                    value="Public"
+                    checked
+                  />
+                  <label for="public">Public</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="private"
+                    name="radio-visibility"
+                    value="Private"
+                  />
+                  <label for="private">Private</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <div class="section-title">
+              <div class="rounded-title-number">
+                <p>4</p>
+              </div>
+              <h2>Estimated Cost</h2>
+            </div>
+            <p class="estimated-cost-text">
+              This summary provides a cost estimation based on your
+              configuration, the amount of time you expexct to use the resource
+              for, and the scale of your expected usage. For the purpose of this
+              calculation, we consider that 1 month equals to 730 hours
+            </p>
+            <div class="alert">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p class="text-alert">
+                Important notice: Chia farming on Scaleway Object Storage that
+                occurs without prior authorization will be billed at €0.08 per
+                GB. Read
+                <a href=""
+                  >our blogpost <i class="fas fa-external-link-alt"></i
+                ></a>
+                to learn more
               </p>
             </div>
-            <div class="form-section">
-              <div class="section-title">
-                <div class="rounded-title-number">
-                  <p>2</p>
-                </div>
-                <h2>Choose a region</h2>
-              </div>
-              <p>
-                A region refers to the geographical location in wich yout bucket
-                will be created
-              </p>
-              <div class="countries">
-                <div class="country">
-                  <input type="radio" id="paris" name="radio-countries" value="PARIS" checked />
-                  <label for="paris"><img class="country-img" src="./sources/france.svg" /> PARIS</label>
-                </div>
-                <div class="country">
-                  <input type="radio" id="amsterdam" name="radio-countries" value="AMSTERDAM" />
-                  <label for="amsterdam"><img class="country-img" src="./sources/amsterdam.svg" /> AMSTERDAM</label>
-                </div>
-                <div class="country">
-                  <input type="radio" id="varsovie" name="radio-countries" value="VARSOVIE" />
-                  <label for="varsovie"><img class="country-img" src="./sources/varsovie.svg" /> VARSOVIE</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-section">
-              <div class="section-title">
-                <div class="rounded-title-number">
-                  <p>3</p>
-                </div>
-                <h2>Set Your Bucket Visibility</h2>
-              </div>
-              <div class="bucket-visibility-content">
-                <p class="buckey-visibility-text">
-                  Bucket Visiblity specifies whether the list of objects in the objects in the bucket.
-                  It does not affect the visibility of the objects themselves. A file uploaded to a public
-                  bucket is private by default. Additionally, a private file in a public bucket cannot be
-                  publicly accessible.
-                </p>
-                <div class="bucket-visibility-radio">
-                  <div>
-                    <input type="radio" id="public" name="radio-visibility" value="Public" checked />
-                    <label for="public">Public</label>
-                  </div>
-                  <div>
-                    <input type="radio" id="private" name="radio-visibility" value="Private" />
-                    <label for="private">Private</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-section">
-              <div class="section-title">
-                <div class="rounded-title-number">
-                  <p>4</p>
-                </div>
-                <h2>Estimated Cost</h2>
-              </div>
-              <p>
-                This summary provides a cost estimation based on your
-                configuration, the amount of time you expexct to use the
-                resource for, and the scale of your expected usage. For the
-                purpose of this calculation, we consider that 1 month equals to
-                730 hours
-              </p>
-            </div>
-          </form>
-        </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    <h3>
+                      <i class="fas fa-calculator"></i>
+                      Coût estimé
+                    </h3>
+                  </th>
+                  <th>
+                    <input type="number" name="time-number" min="0" />
+                    <select name="time" id="time">
+                      <option value="Hour">Hour</option>
+                      <option value="Day">Day</option>
+                      <option value="Month">Month</option>
+                    </select>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>
+                    <p>Region</p>
+                    <p>
+                      <img class="country-img" src="./sources/france.svg" />
+                      Paris
+                    </p>
+                  </th>
+                  <th>
+                    <p>€0.00</p>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <p>Bucket visibility</p>
+                    <p><i class="fas fa-lock"></i> Private</p>
+                  </th>
+                  <th>
+                    <p>€0.00</p>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <p>Storage <i>75 GB free storage</i></p>
+                    <div class="storage-input">
+                      <input type="number" name="storage" min="0" />
+                      <div class="gb">GB</div>
+                    </div>
+                  </th>
+                  <th>
+                    <p>€0.00</p>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <p>Transfert <i>75 GB outgoing transfer</i></p>
+                    <div class="storage-input">
+                      <input type="number" name="storage" min="0" />
+                      <div class="gb">GB</div>
+                    </div>
+                  </th>
+                  <th>
+                    <p>€0.00</p>
+                  </th>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td></td>
+                  <td>€0.00</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <input type="submit" value="Create a bucket" />
+        </form>
+        <footer>
+          <a href="#">Blog <i class="fas fa-external-link-alt"></i></a>
+          <a href="#">Pricing <i class="fas fa-external-link-alt"></i></a>
+          <a href="#">Careers <i class="fas fa-external-link-alt"></i></a>
+          <a href="#">Privacy <i class="fas fa-external-link-alt"></i></a>
+          <a href="#">Cookies <i class="fas fa-external-link-alt"></i></a>
+          <a href="#">API <i class="fas fa-external-link-alt"></i></a>
+        </footer>
       </main>
     </div>
   </body>
