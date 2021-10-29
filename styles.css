@@ -14,6 +14,7 @@
   --primary-color: #4f0599;
   --secondary-color: #a365f6;
   --tertiary-color: #45d6b5;
+
   --gray-primary: #4a4f62;
   --gray-secondary: #b2b6c3;
   --gray-tertiary: #d4dae7;
@@ -38,7 +39,9 @@ nav .nav-content-end,
 header,
 header .organization,
 header .life-ring,
-header .user-initials {
+header .user-initials,
+.back-to-buckets,
+form {
   display: flex;
 }
 
@@ -48,7 +51,8 @@ nav .nav-content-title,
 header .organization,
 header .organization .user-initials,
 header .organization .life-ring,
-.back-to-buckets-list {
+.back-to-buckets-list,
+form {
   align-items: center;
 }
 
@@ -66,8 +70,20 @@ header {
   top: 0;
 }
 
+nav .nav-content-title,
+header,
+.back-to-buckets {
+  justify-content: space-between;
+}
+
+header select,
+header .organization .life-ring {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
+  color: black;
 }
 
 /******************************* DIV info *******************************/
@@ -97,7 +113,8 @@ a {
 
 nav,
 .nav-content,
-.nav-content-end {
+.nav-content-end,
+form {
   flex-direction: column;
 }
 
@@ -136,7 +153,6 @@ nav .nav-content-title,
 }
 
 nav .nav-content-title {
-  justify-content: space-between;
   margin: 20px auto;
 }
 
@@ -147,6 +163,7 @@ nav .nav-content-title {
 .nav-content-end a {
   font-weight: bold;
   margin-bottom: 10px;
+  color: var(--primary-color);
 }
 
 .nav-content-end a i {
@@ -167,8 +184,6 @@ main {
 
 header {
   height: var(--header-height);
-  justify-content: space-between;
-  background-color: white;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -180,16 +195,20 @@ header .organization .life-ring {
 header select {
   padding: 0 10px;
   font-size: 15px;
-  cursor: pointer;
 }
 
 header select:not(.organization select) {
   margin-left: 20px;
 }
 
+header,
 header select:not(.organization select),
 header .organization .life-ring {
   background-color: white;
+}
+
+header select:not(.organization select),
+header .organization .life-ring {
   border: solid 1px var(--gray-tertiary);
 }
 
@@ -210,6 +229,7 @@ header .organization .user-initials {
 }
 
 header .organization select,
+header .organization .life-ring:hover,
 header .organization .user-initials {
   color: white;
 }
@@ -234,12 +254,10 @@ header .organization .life-ring {
   font-size: 25px;
   box-sizing: border-box;
   color: var(--gray-tertiary);
-  cursor: pointer;
 }
 
 header .organization .life-ring:hover {
   border: none;
-  color: white;
   background-color: var(--primary-color);
 }
 
@@ -254,17 +272,29 @@ header .organization .user-initials {
   background-color: var(--secondary-color);
 }
 
-/**** back to buckets list *****/
+/**** back to buckets *****/
 
-.back-to-buckets-list {
-  display: flex;
-  justify-content: space-between;
-  width: 19%;
-  margin: 20px 0 0 20px;
+.back-to-buckets {
+  width: 150px;
+  margin: 30px 0 0 30px;
+  font-weight: bold;
 }
 
-.back-to-buckets-list a:hover {
+.back-to-buckets,
+.back-to-buckets a {
+  color: var(--primary-color);
+}
+
+.back-to-buckets a:hover {
   text-decoration: underline;
 }
 
 /************* form *************/
+
+form {
+  margin-top: 60px;
+}
+
+form h1 {
+  margin-bottom: 60px;
+}

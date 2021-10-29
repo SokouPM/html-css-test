@@ -109,53 +109,73 @@
             <i class="fas fa-chevron-down"></i>
           </div>
         </header>
-        <div class="back-to-buckets-list">
+        <div class="back-to-buckets">
           <i class="fas fa-chevron-left"></i>
-          <a href="#">Revenir à la liste des buckets</a>
+          <a href="#">Back to buckets</a>
         </div>
           <form action="#" method="post">
             <h1>Create a Bucket</h1>
-            <div class="NameYourBucketDiv titleDiv">
-              <h2 class="titleH2 h2Number1">Name your bucket</h2>
-              <input
-                type="text"
-                class="inputBucket"
-                placeholder="Bucket name"
-              />
+            <div class="form-section">
+              <div class="section-title">
+                <div class="rounded-title-number">
+                  <p>1</p>
+                </div>
+                <h2>Name your bucket</h2>
+              </div>
+              <input type="text" class="input-bucket" placeholder="Bucket name" />
             </div>
-            <div class="ChooseARegion titleDiv">
-              <h2 class="titleH2 h2Number2">Choose a region</h2>
-              <p style="margin-bottom: 25px">
+            <div class="form-section">
+              <div class="section-title">
+                <div class="rounded-title-number">
+                  <p>2</p>
+                </div>
+                <h2>Choose a region</h2>
+              </div>
+              <p>
                 A region refers to the geographical location in wich yout bucket
                 will be created
               </p>
               <div class="countries">
-                <div class="divCountry purpleBorder">
-                  <img class="svgCountry" src="./sources/france.svg" />
+                <div class="country">
+                  <img class="country-img" src="./sources/france.svg" />
                   <p>PARIS</p>
                 </div>
-                <div class="divCountry">
-                  <img class="svgCountry" src="./sources/amsterdam.svg" />
+                <div class="country">
+                  <img class="country-img" src="./sources/amsterdam.svg" />
                   <p>AMSTERDAM</p>
                 </div>
-                <div class="divCountry">
-                  <img class="svgCountry" src="./sources/varsovie.svg" />
+                <div class="country">
+                  <img class="country-img" src="./sources/varsovie.svg" />
                   <p>VARSOVIE</p>
                 </div>
               </div>
             </div>
-            <div class="SetYourBucketVisibility titleDiv">
-              <h2 class="titleH2 h2Number3">Set Your Bucket Visibility</h2>
-              <div class="bucketVisibility titleDiv">
-                <p style="padding-bottom: 50px">
-                  Bucket Visiblity specifies whether the list of objects in the
-                  <input type="radio" /> Public
-                  <input type="radio" class="teest" checked /> Private
-                </p>
+            <div class="form-section">
+              <div class="section-title">
+                <div class="rounded-title-number">
+                  <p>3</p>
+                </div>
+                <h2>Set Your Bucket Visibility</h2>
+              </div>
+              <div>
+                <p>Bucket Visiblity specifies whether the list of objects in the</p>
+                <div>
+                  <input type="radio" id="public" name="radio-vVisibility" value="Public" checked />
+                  <label for="public">Public</label>
+                </div>
+                  <div>
+                  <input type="radio" id="private" name="radio-vVisibility" value="Private" />
+                  <label for="public">Private</label>
+                </div>
               </div>
             </div>
-            <div class="EstimatedCost titleDiv">
-              <h2 class="titleH2 h2Number4">Estimated Cost</h2>
+            <div class="form-section">
+              <div class="section-title">
+                <div class="rounded-title-number">
+                  <p>3</p>
+                </div>
+                <h2>Estimated Cost</h2>
+              </div>
               <p>
                 This summary provides a cost estimation based on your
                 configuration, the amount of time you expexct to use the
@@ -163,7 +183,7 @@
                 purpose of this calculation, we consider that 1 month equals to
                 730 hours
               </p>
-              <input type="text" />
+              <input type="text" name="" id="" />
             </div>
           </form>
         </div>
