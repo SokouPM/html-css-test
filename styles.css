@@ -41,7 +41,14 @@ header .organization,
 header .life-ring,
 header .user-initials,
 .back-to-buckets,
-form {
+form,
+form .form-section .section-title,
+form .form-section .section-title .rounded-title-number,
+form .form-section .countries,
+form .form-section .country,
+form .form-section .country label,
+form .form-section .bucket-visibility-content,
+form .form-section .bucket-visibility-radio {
   display: flex;
 }
 
@@ -52,7 +59,12 @@ header .organization,
 header .organization .user-initials,
 header .organization .life-ring,
 .back-to-buckets-list,
-form {
+form,
+form .form-section .section-title,
+form .form-section .section-title .rounded-title-number,
+form .form-section .countries,
+form .form-section .country,
+form .form-section .country label {
   align-items: center;
 }
 
@@ -60,7 +72,9 @@ form {
 .info,
 nav .nav-content,
 nav .nav-content-title,
-header {
+header,
+form .form-section input[type="text"],
+form .form-section .bucket-visibility-content {
   width: 100%;
 }
 
@@ -72,13 +86,56 @@ header {
 
 nav .nav-content-title,
 header,
-.back-to-buckets {
+main .back-to-buckets,
+form .form-section .bucket-visibility-content,
+form .form-section .bucket-visibility-radio {
   justify-content: space-between;
 }
 
+.nav-content-end a i,
+form .form-section input[type="text"],
+form .form-section .first-section-text {
+  color: var(--gray-secondary);
+}
+
+nav a,
 header select,
-header .organization .life-ring {
+header .organization .life-ring,
+form .form-section .country,
+form .form-section .country input[type="radio"],
+form .form-section .country label {
   cursor: pointer;
+}
+
+header .organization .life-ring,
+form .form-section .country label {
+  color: var(--gray-tertiary);
+}
+
+header .organization .user-initials,
+form .form-section .section-title .rounded-title-number {
+  border-radius: 100%;
+}
+
+header select,
+header .organization .life-ring,
+form .form-section input[type="text"],
+form .form-section .country label,
+form .form-section .bucket-visibility-content {
+  border-radius: 5px;
+}
+
+header select:not(.organization select),
+header .organization .life-ring,
+form .form-section input[type="text"],
+form .form-section .country label,
+form .form-section .bucket-visibility-content {
+  border: solid 1px var(--gray-tertiary);
+}
+
+.info a:hover,
+.back-to-buckets a:hover {
+  text-decoration: underline;
 }
 
 a {
@@ -88,19 +145,24 @@ a {
 
 /******************************* DIV info *******************************/
 
+.info,
+.info a {
+  color: var(--text-info-color);
+}
+
 .info {
   background-color: var(--background-info-color);
-  color: var(--text-info-color);
   height: var(--info-height);
-  font-size: 20px;
+  font-size: 18px;
   top: 0;
 }
 
 .info i:first-child {
-  margin: 0 20px;
+  margin-left: 20px;
+  margin-right: 10px;
 }
 
-.info p:not(p.new) {
+.info a {
   margin: 0 10px;
 }
 
@@ -125,6 +187,7 @@ nav {
   height: 100vh;
   padding: 20px;
   overflow: auto;
+  z-index: 2;
 }
 
 nav .logo {
@@ -132,12 +195,15 @@ nav .logo {
   margin-bottom: 40px;
 }
 
-nav p,
-nav .nav-content a {
+nav a,
+nav .nav-content a,
+header .organization p:not(.user-initials p),
+form h1,
+form .form-section .section-title h2 {
   color: var(--gray-primary);
 }
 
-nav p,
+nav a,
 nav .nav-content a {
   margin-bottom: 15px;
 }
@@ -166,10 +232,6 @@ nav .nav-content-title {
   color: var(--primary-color);
 }
 
-.nav-content-end a i {
-  color: var(--gray-secondary);
-}
-
 nav a:hover {
   font-weight: bolder;
 }
@@ -185,11 +247,7 @@ main {
 header {
   height: var(--header-height);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-}
-
-header select,
-header .organization .life-ring {
-  border-radius: 5px;
+  z-index: 1;
 }
 
 header select {
@@ -205,11 +263,6 @@ header,
 header select:not(.organization select),
 header .organization .life-ring {
   background-color: white;
-}
-
-header select:not(.organization select),
-header .organization .life-ring {
-  border: solid 1px var(--gray-tertiary);
 }
 
 header select:not(.organization select) {
@@ -230,7 +283,8 @@ header .organization .user-initials {
 
 header .organization select,
 header .organization .life-ring:hover,
-header .organization .user-initials {
+header .organization .user-initials,
+form .form-section .section-title .rounded-title-number {
   color: white;
 }
 
@@ -241,7 +295,8 @@ header .organization select {
 }
 
 header .organization .user-initials,
-header .organization .life-ring {
+header .organization .life-ring,
+form .form-section .section-title .rounded-title-number {
   justify-content: center;
   width: 45px;
 }
@@ -253,7 +308,6 @@ header .organization * {
 header .organization .life-ring {
   font-size: 25px;
   box-sizing: border-box;
-  color: var(--gray-tertiary);
 }
 
 header .organization .life-ring:hover {
@@ -263,11 +317,9 @@ header .organization .life-ring:hover {
 
 header .organization p:not(.user-initials p) {
   text-align: end;
-  color: var(--gray-primary);
 }
 
 header .organization .user-initials {
-  border-radius: 100%;
   margin-right: -5px;
   background-color: var(--secondary-color);
 }
@@ -285,16 +337,107 @@ header .organization .user-initials {
   color: var(--primary-color);
 }
 
-.back-to-buckets a:hover {
-  text-decoration: underline;
-}
-
 /************* form *************/
 
 form {
   margin-top: 60px;
 }
 
-form h1 {
+form h1,
+form .form-section {
   margin-bottom: 60px;
+}
+
+form .form-section {
+  width: 50%;
+}
+
+form .form-section > p:not(p.first-section-text) {
+  margin-bottom: 30px;
+}
+
+/****** Name your bucket ******/
+
+form .form-section .section-title,
+form .form-section input[type="text"] {
+  margin-bottom: 20px;
+}
+
+p.first-section-text {
+  font-size: 12px;
+}
+
+form .form-section .section-title {
+  position: relative;
+}
+
+form .form-section .section-title .rounded-title-number {
+  height: 24px;
+  width: 24px;
+  background-color: var(--gray-primary);
+  margin-right: 20px;
+  position: absolute;
+  left: -40px;
+}
+
+form .form-section .section-title h2 {
+  font-size: 25px;
+}
+
+form .form-section input[type="text"] {
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/****** Choose a region ******/
+
+form .form-section img {
+  width: 20px;
+}
+
+form .form-section .country input[type="radio"] {
+  display: none;
+}
+
+form .form-section .country label {
+  padding: 0 20px;
+  margin-right: 10px;
+  height: 50px;
+  width: 130px;
+}
+
+form .form-section .country label:hover {
+  border-color: var(--primary-color);
+}
+
+form .form-section .country input[type="radio"]:checked + label {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+form .form-section .country label img {
+  margin-right: 10px;
+}
+
+/**** Set Bucket Visibility ****/
+
+form .form-section .buckey-visibility-text {
+  width: 55%;
+  line-height: 24px;
+  color: var(--gray-primary);
+}
+
+form .form-section .bucket-visibility-content {
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+form .form-section .bucket-visibility-radio input[type="radio"] {
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.form-section {
+  border: solid red 1px;
 }

@@ -16,16 +16,16 @@
   <body>
     <div class="info">
       <i class="fas fa-info-circle"></i>
-      <p>
+      <a href="#">
         🆕 Use Kubernetes Kosmos to launch pods through multiple cloud providers
         & streamline the availability of your K8s workload 🚀
-      </p>
+      </a>
       <i class="fas fa-times"></i>
     </div>
     <div class="flex">
       <nav>
         <img class="logo" src="./sources/logo.svg" alt="Scaleway-logo" />
-        <p>Project dashbooard</p>
+        <a>Project dashbooard</a>
         <div class="nav-content">
           <div class="nav-content-title">
             <h3><i class="fas fa-memory"></i> Compute</h3>
@@ -80,12 +80,12 @@
           <a href="#">Support</a>
           <a href="#">Abuse</a>
           <a href="#">Documentation <i class="fas fa-external-link-alt"></i></a>
-          <a href="#"
-            >Feature Request <i class="fas fa-external-link-alt"></i
-          ></a>
-          <a href="#"
-            >Dedibox Console <i class="fas fa-external-link-alt"></i
-          ></a>
+          <a href="#">
+            Feature Request <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a href="#">
+            Dedibox Console <i class="fas fa-external-link-alt"></i>
+          </a>
         </div>
       </nav>
       <main>
@@ -123,6 +123,10 @@
                 <h2>Name your bucket</h2>
               </div>
               <input type="text" class="input-bucket" placeholder="Bucket name" />
+              <p class="first-section-text">
+                <i class="fas fa-info-circle"></i> The name of your bucket can only contain the following characters
+                (min 3): lowercase letters, numbers, periods (.) And hyphens (-)
+              </p>
             </div>
             <div class="form-section">
               <div class="section-title">
@@ -137,16 +141,16 @@
               </p>
               <div class="countries">
                 <div class="country">
-                  <img class="country-img" src="./sources/france.svg" />
-                  <p>PARIS</p>
+                  <input type="radio" id="paris" name="radio-countries" value="PARIS" checked />
+                  <label for="paris"><img class="country-img" src="./sources/france.svg" /> PARIS</label>
                 </div>
                 <div class="country">
-                  <img class="country-img" src="./sources/amsterdam.svg" />
-                  <p>AMSTERDAM</p>
+                  <input type="radio" id="amsterdam" name="radio-countries" value="AMSTERDAM" />
+                  <label for="amsterdam"><img class="country-img" src="./sources/amsterdam.svg" /> AMSTERDAM</label>
                 </div>
                 <div class="country">
-                  <img class="country-img" src="./sources/varsovie.svg" />
-                  <p>VARSOVIE</p>
+                  <input type="radio" id="varsovie" name="radio-countries" value="VARSOVIE" />
+                  <label for="varsovie"><img class="country-img" src="./sources/varsovie.svg" /> VARSOVIE</label>
                 </div>
               </div>
             </div>
@@ -157,22 +161,29 @@
                 </div>
                 <h2>Set Your Bucket Visibility</h2>
               </div>
-              <div>
-                <p>Bucket Visiblity specifies whether the list of objects in the</p>
-                <div>
-                  <input type="radio" id="public" name="radio-vVisibility" value="Public" checked />
-                  <label for="public">Public</label>
-                </div>
+              <div class="bucket-visibility-content">
+                <p class="buckey-visibility-text">
+                  Bucket Visiblity specifies whether the list of objects in the objects in the bucket.
+                  It does not affect the visibility of the objects themselves. A file uploaded to a public
+                  bucket is private by default. Additionally, a private file in a public bucket cannot be
+                  publicly accessible.
+                </p>
+                <div class="bucket-visibility-radio">
                   <div>
-                  <input type="radio" id="private" name="radio-vVisibility" value="Private" />
-                  <label for="public">Private</label>
+                    <input type="radio" id="public" name="radio-visibility" value="Public" checked />
+                    <label for="public">Public</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="private" name="radio-visibility" value="Private" />
+                    <label for="private">Private</label>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="form-section">
               <div class="section-title">
                 <div class="rounded-title-number">
-                  <p>3</p>
+                  <p>4</p>
                 </div>
                 <h2>Estimated Cost</h2>
               </div>
@@ -183,7 +194,6 @@
                 purpose of this calculation, we consider that 1 month equals to
                 730 hours
               </p>
-              <input type="text" name="" id="" />
             </div>
           </form>
         </div>
