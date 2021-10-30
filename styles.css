@@ -34,6 +34,30 @@ body {
   height: 100%;
 }
 
+nav,
+table tr .table-right-column {
+  background-color: var(--nav-background);
+}
+
+nav,
+form .form-section .alert,
+table th,
+table td {
+  padding: 20px;
+}
+
+nav .nav-content-title,
+.nav-content-end a,
+.nav-content-end,
+.back-to-buckets,
+.back-to-buckets a,
+form .form-section .country input[type="radio"]:checked + label,
+table thead i,
+table .table-left-column .gb-text,
+table tfoot .table-right-column {
+  color: var(--primary-color);
+}
+
 .flex,
 .info,
 nav,
@@ -56,7 +80,11 @@ form .form-section .country label,
 form .form-section .bucket-visibility-content,
 form .form-section .bucket-visibility-radio,
 form .form-section .alert,
-footer {
+footer,
+table .table-left-column > *,
+table .table-left-column > * div,
+table .table-right-column div,
+table .storage-input .gb {
   display: flex;
 }
 
@@ -74,7 +102,11 @@ form .form-section .section-title .rounded-title-number,
 form .form-section .countries,
 form .form-section .country,
 form .form-section .country label,
-form .form-section .alert {
+form .form-section .alert,
+table .table-left-column *,
+table .table-left-column *,
+table .table-right-column div,
+table .storage-input .gb {
   align-items: center;
 }
 
@@ -83,7 +115,8 @@ nav .nav-content .beta-link,
 header,
 main .back-to-buckets,
 form .form-section .bucket-visibility-content,
-form .form-section .bucket-visibility-radio {
+form .form-section .bucket-visibility-radio,
+table tbody .table-left-column > * {
   justify-content: space-between;
 }
 
@@ -92,6 +125,7 @@ header .organization .user-initials,
 header .organization .life-ring,
 form .form-section .section-title .rounded-title-number,
 form .form-section .alert,
+table .storage-input .gb,
 footer {
   justify-content: center;
 }
@@ -102,19 +136,73 @@ nav .nav-content,
 nav .nav-content-title,
 header,
 form .form-section input[type="text"],
-form .form-section .bucket-visibility-content {
+form .form-section .bucket-visibility-content,
+table {
   width: 100%;
 }
 
-nav,
+nav .nav-content .beta,
+table .storage-input * {
+  width: 40px;
+}
+
+form .form-section input[type="text"],
+table .input-thead input,
+table .input-thead select {
+  height: 40px;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: 0 0 3px var(--primary-color) !important;
+  -moz-box-shadow: 0 0 3px var(--primary-color) !important;
+  -webkit-box-shadow: 0 0 3px var(--primary-color) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
 header {
   position: sticky;
   top: 0;
 }
 
+.nav-content-end a,
+nav a:hover,
+.back-to-buckets,
+table .selected-country,
+table .selected-visibility {
+  font-weight: bold;
+}
+
+table tfoot .table-right-column,
+form .form-section .section-title h2,
+header .organization .life-ring {
+  font-size: 25px;
+}
+
+.info i:first-child,
+form .form-section .country label,
+form .form-section .country label img,
+form .form-section .bucket-visibility-radio input[type="radio"],
+table thead i,
+table .table-left-column div img,
+table .table-left-column div p i {
+  margin-right: 10px;
+}
+
 .nav-content-end a i,
 form .form-section input[type="text"],
-form .form-section .first-section-text {
+form .form-section .first-section-text,
+table tbody .table-right-column,
+table tbody i.fas,
+table .storage-input .gb,
+footer a {
   color: var(--gray-secondary);
 }
 
@@ -154,7 +242,10 @@ header select:not(.organization select),
 header .organization .life-ring,
 form .form-section input[type="text"],
 form .form-section .country label,
-form .form-section .bucket-visibility-content {
+form .form-section .bucket-visibility-content,
+table .input-thead input,
+table .input-thead select,
+table .storage-input * {
   border: solid 1px var(--gray-tertiary);
 }
 
@@ -168,7 +259,9 @@ footer a:hover {
 nav,
 header .organization .life-ring,
 form .form-section input[type="text"],
-form .form-section .bucket-visibility-content {
+form .form-section .bucket-visibility-content,
+table .input-thead input,
+table .input-thead select {
   box-sizing: border-box;
 }
 
@@ -176,11 +269,6 @@ form .form-section .buckey-visibility-text,
 form .form-section .estimated-cost-text,
 form .form-section .text-alert {
   line-height: 24px;
-}
-
-form .form-section .buckey-visibility-text,
-form .form-section .estimated-cost-text {
-  color: var(--gray-primary);
 }
 
 .info,
@@ -218,12 +306,10 @@ header .organization select {
   background-color: var(--background-info-color);
   height: var(--info-height);
   font-size: 18px;
-  top: 0;
 }
 
 .info i:first-child {
   margin-left: 20px;
-  margin-right: 10px;
 }
 
 .info a {
@@ -247,8 +333,6 @@ form {
 nav {
   background-color: var(--nav-background);
   width: var(--nav-width);
-  height: 100vh;
-  padding: 20px;
   overflow: auto;
   z-index: 2;
 }
@@ -262,7 +346,10 @@ nav a,
 nav .nav-content a,
 header .organization p:not(.user-initials p),
 form h1,
-form .form-section .section-title h2 {
+form .form-section .section-title h2,
+form .form-section .buckey-visibility-text,
+form .form-section .estimated-cost-text,
+table .table-left-column div p:first-child {
   color: var(--gray-primary);
 }
 
@@ -274,14 +361,8 @@ nav .nav-content a {
 nav .nav-content .beta {
   background-color: rgb(255, 140, 105);
   height: 20px;
-  width: 40px;
   border-radius: 100px;
   font-size: 10px;
-}
-
-nav .nav-content-title,
-.nav-content-end {
-  color: var(--primary-color);
 }
 
 nav .nav-content-title {
@@ -293,19 +374,19 @@ nav .nav-content-title {
 }
 
 .nav-content-end a {
-  font-weight: bold;
   margin-bottom: 10px;
-  color: var(--primary-color);
 }
 
-nav a:hover {
-  font-weight: bolder;
+nav,
+main {
+  height: calc(100vh - var(--info-height));
 }
 
 /******************************* main *******************************/
 
 main {
   width: var(--main-width);
+  overflow: auto;
 }
 
 /************* Header *************/
@@ -356,7 +437,8 @@ form input[type="submit"] {
   color: white;
 }
 
-header .organization select {
+header .organization select,
+table .input-thead select {
   width: 100px;
 }
 
@@ -367,10 +449,6 @@ header .organization .life-ring {
 
 header .organization * {
   margin: 0 10px;
-}
-
-header .organization .life-ring {
-  font-size: 25px;
 }
 
 header .organization .life-ring:hover {
@@ -392,12 +470,6 @@ header .organization .user-initials {
 .back-to-buckets {
   width: 150px;
   margin: 30px 0 0 30px;
-  font-weight: bold;
-}
-
-.back-to-buckets,
-.back-to-buckets a {
-  color: var(--primary-color);
 }
 
 /************* form *************/
@@ -416,6 +488,10 @@ form input[type="submit"] {
   width: 50%;
 }
 
+form .form-section .section-title .rounded-title-number {
+  background-color: var(--gray-primary);
+}
+
 form .form-section > p:not(p.first-section-text) {
   margin-bottom: 30px;
 }
@@ -424,12 +500,13 @@ form input[type="submit"] {
   height: 50px;
 }
 
-/****** Name your bucket ******/
-
 form .form-section .section-title,
-form .form-section input[type="text"] {
+form .form-section input[type="text"],
+form .form-section .alert {
   margin-bottom: 20px;
 }
+
+/****** Name your bucket ******/
 
 p.first-section-text {
   font-size: 12px;
@@ -442,18 +519,12 @@ form .form-section .section-title {
 form .form-section .section-title .rounded-title-number {
   height: 24px;
   width: 24px;
-  background-color: var(--gray-primary);
   margin-right: 20px;
   position: absolute;
   left: -40px;
 }
 
-form .form-section .section-title h2 {
-  font-size: 25px;
-}
-
 form .form-section input[type="text"] {
-  height: 40px;
   padding: 0 10px;
 }
 
@@ -469,22 +540,13 @@ form .form-section .country input[type="radio"] {
 
 form .form-section .country label {
   padding: 0 20px;
-  margin-right: 10px;
   height: 50px;
   width: 130px;
 }
 
-form .form-section .country label:hover {
+form .form-section .country label:hover,
+form .form-section .country input[type="radio"]:checked + label input:focus {
   border-color: var(--primary-color);
-}
-
-form .form-section .country input[type="radio"]:checked + label {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
-form .form-section .country label img {
-  margin-right: 10px;
 }
 
 /**** Set Bucket Visibility ****/
@@ -498,7 +560,6 @@ form .form-section .bucket-visibility-content {
 }
 
 form .form-section .bucket-visibility-radio input[type="radio"] {
-  margin-right: 10px;
   margin-left: 40px;
   transform: scale(1.4);
 }
@@ -508,8 +569,6 @@ form .form-section .bucket-visibility-radio input[type="radio"] {
 form .form-section .alert {
   background-color: var(--alert-bacground);
   color: var(--alert-content);
-  padding: 20px;
-  margin-bottom: 10px;
 }
 
 form .form-section .alert i.fa-exclamation-triangle {
@@ -523,6 +582,94 @@ form .form-section .alert a {
 
 /********* table *********/
 
+table {
+  border-collapse: collapse;
+}
+
+table thead,
+table tbody td,
+table tfoot .table-right-column {
+  border-right: solid 1px var(--gray-tertiary);
+}
+
+table thead {
+  border-top: solid 1px var(--gray-tertiary);
+}
+
+table .table-right-column,
+table thead,
+table thead table .table-right-column,
+table tbody td {
+  border-left: solid 1px var(--gray-tertiary);
+}
+
+table tbody td,
+table tbody .table-right-column,
+table tfoot .table-right-column {
+  border-bottom: solid 1px var(--gray-tertiary);
+}
+
+table .table-left-column {
+  width: 70%;
+}
+
+table .table-left-column .gb-text {
+  font-style: italic;
+}
+
+table .table-right-column {
+  width: 30%;
+}
+
+table .table-right-column div {
+  justify-content: end;
+}
+
+table tfoot .column-invisible {
+  visibility: hidden;
+}
+
+table .input-thead {
+  margin: auto;
+  width: max-content;
+}
+
+table .input-thead input {
+  width: 70px;
+  padding: 0 10px;
+}
+
+table .storage-input * {
+  height: 30px;
+}
+
+table .input-thead input,
+table .storage-input input[type="number"] {
+  border-radius: 5px 0 0 5px;
+}
+
+table .storage-input input[type="number"] {
+  padding-left: 10px;
+}
+
+table .input-thead select,
+table .storage-input .gb {
+  border-radius: 0 5px 5px 0;
+}
+
+table .storage-input .gb {
+  width: 30px;
+}
+
+table .storage-input input::-webkit-outer-spin-button,
+.storage-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+table .storage-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 /************* footer *************/
 
 footer {
@@ -531,7 +678,6 @@ footer {
 }
 
 footer a {
-  color: var(--gray-secondary);
   font-size: 14px;
   margin: 0 20px 20px;
 }

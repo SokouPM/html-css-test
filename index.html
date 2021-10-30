@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <title>Fake Scaleway</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./sources/favicon.ico" />
     <link
@@ -99,12 +99,10 @@
         <header>
           <select>
             <option value="default">default</option>
-            <option value="other">other</option>
           </select>
           <div class="organization">
             <select>
               <option value="create">Create</option>
-              <option value="modify">Modify</option>
             </select>
             <div class="life-ring">
               <i class="far fa-life-ring"></i>
@@ -253,73 +251,114 @@
             <table>
               <thead>
                 <tr>
-                  <th>
+                  <th class="table-left-column">
                     <h3>
                       <i class="fas fa-calculator"></i>
-                      Coût estimé
+                      Estimated cost
                     </h3>
                   </th>
-                  <th>
-                    <input type="number" name="time-number" min="0" />
-                    <select name="time" id="time">
-                      <option value="Hour">Hour</option>
-                      <option value="Day">Day</option>
-                      <option value="Month">Month</option>
-                    </select>
+                  <th class="table-right-column">
+                    <div class="input-thead">
+                      <input
+                        type="number"
+                        name="time-number"
+                        min="0"
+                        value="1"
+                      />
+                      <select name="time" id="time">
+                        <option value="Hour">Hour</option>
+                        <option value="Day">Day</option>
+                        <option value="Month">Month</option>
+                      </select>
+                    </div>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th>
-                    <p>Region</p>
-                    <p>
-                      <img class="country-img" src="./sources/france.svg" />
-                      Paris
-                    </p>
-                  </th>
-                  <th>
-                    <p>€0.00</p>
-                  </th>
-                </tr>
-                <tr>
-                  <th>
-                    <p>Bucket visibility</p>
-                    <p><i class="fas fa-lock"></i> Private</p>
-                  </th>
-                  <th>
-                    <p>€0.00</p>
-                  </th>
-                </tr>
-                <tr>
-                  <th>
-                    <p>Storage <i>75 GB free storage</i></p>
-                    <div class="storage-input">
-                      <input type="number" name="storage" min="0" />
-                      <div class="gb">GB</div>
+                  <td class="table-left-column">
+                    <div>
+                      <p>Region</p>
+                      <div class="selected-country">
+                        <img class="country-img" src="./sources/france.svg" />
+                        <p>PARIS</p>
+                      </div>
                     </div>
-                  </th>
-                  <th>
-                    <p>€0.00</p>
-                  </th>
+                  </td>
+                  <td class="table-right-column">
+                    <div>
+                      <p>€0.00</p>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <th>
-                    <p>Transfert <i>75 GB outgoing transfer</i></p>
-                    <div class="storage-input">
-                      <input type="number" name="storage" min="0" />
-                      <div class="gb">GB</div>
+                  <td class="table-left-column">
+                    <div>
+                      <p>Bucket visibility</p>
+                      <p class="selected-visibility">
+                        <i class="fas fa-lock"></i>
+                        Private
+                      </p>
                     </div>
-                  </th>
-                  <th>
-                    <p>€0.00</p>
-                  </th>
+                  </td>
+                  <td class="table-right-column">
+                    <div>
+                      <p>€0.00</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-left-column">
+                    <div>
+                      <p>Storage <i class="gb-text">75 GB free storage</i></p>
+                      <div class="storage-input">
+                        <input
+                          type="number"
+                          name="storage"
+                          min="0"
+                          value="75"
+                        />
+                        <div class="gb">GB</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-right-column">
+                    <div>
+                      <p>€0.00</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-left-column">
+                    <div>
+                      <p>
+                        Transfert
+                        <i class="gb-text">75 GB outgoing transfer</i>
+                      </p>
+                      <div class="storage-input">
+                        <input
+                          type="number"
+                          name="storage"
+                          min="0"
+                          value="75"
+                        />
+                        <div class="gb">GB</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-right-column">
+                    <div>
+                      <p>€0.00</p>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
-                  <td></td>
-                  <td>€0.00</td>
+                  <td class="column-invisible"></td>
+                  <td class="table-right-column">
+                    <div>€0.00</div>
+                  </td>
                 </tr>
               </tfoot>
             </table>
