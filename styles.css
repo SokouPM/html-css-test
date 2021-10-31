@@ -152,7 +152,7 @@ table .input-thead select {
   height: 40px;
 }
 
-input:focus,
+input:not([type="submit"]):focus,
 textarea:focus {
   border: 1px solid var(--primary-color) !important;
   box-shadow: 0 0 3px var(--primary-color) !important;
@@ -160,7 +160,7 @@ textarea:focus {
   -webkit-box-shadow: 0 0 3px var(--primary-color) !important;
 }
 
-input:focus,
+input:not([type="submit"]):focus,
 textarea:focus,
 select:focus {
   outline-offset: 0px !important;
@@ -519,7 +519,6 @@ form .form-section .section-title {
 form .form-section .section-title .rounded-title-number {
   height: 24px;
   width: 24px;
-  margin-right: 20px;
   position: absolute;
   left: -40px;
 }
@@ -545,8 +544,7 @@ form .form-section .country label {
 }
 
 form .form-section .country label:hover,
-form .form-section .country input[type="radio"]:checked + label,
-input:focus {
+form .form-section .country input[type="radio"]:checked + label {
   border-color: var(--primary-color);
 }
 
