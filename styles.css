@@ -545,7 +545,8 @@ form .form-section .country label {
 }
 
 form .form-section .country label:hover,
-form .form-section .country input[type="radio"]:checked + label input:focus {
+form .form-section .country input[type="radio"]:checked + label,
+input:focus {
   border-color: var(--primary-color);
 }
 
